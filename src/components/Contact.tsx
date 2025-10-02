@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { ReservationForm } from "@/components/ReservationForm";
 
 const contactInfo = [
   {
@@ -82,31 +82,15 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <Card className="p-12 max-w-2xl mx-auto bg-gradient-hero">
-            <h3 className="font-playfair text-3xl font-bold text-primary-foreground mb-4">
+          <Card className="p-8 max-w-2xl mx-auto">
+            <h3 className="font-playfair text-3xl font-bold text-primary mb-4">
               Bestill Bord
             </h3>
-            <p className="font-inter text-primary-foreground/90 mb-8">
-              Ring oss eller send en e-post for å reservere ditt bord. Vi anbefaler å bestille i
+            <p className="font-inter text-muted-foreground mb-8">
+              Fyll ut skjemaet under for å reservere ditt bord. Vi anbefaler å bestille i
               god tid, spesielt i helgene.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-inter"
-                asChild
-              >
-                <a href="tel:+4712345678">Ring Nå</a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 font-inter backdrop-blur-sm"
-                asChild
-              >
-                <a href="mailto:kontakt@deladela.no">Send E-post</a>
-              </Button>
-            </div>
+            <ReservationForm />
           </Card>
         </motion.div>
       </div>
